@@ -39,9 +39,6 @@ nmap <leader>bq :bp <BAR> bd #<cr>
 nmap <leader>sf <Plug>CtrlSFPrompt
 
 let g:jsx_ext_required = 0 "Allow jsx
-let g:airline#extensions#tabline#enabled = 1
-set statusline+=%#warningmsg#
-set statusline+=%*
 
 "wiki
 let g:vimwiki_list = [{'path': '~/projects/notebook'}]
@@ -53,15 +50,14 @@ nnoremap <silent> <leader>uw :call WindowSwap#MarkWindowSwap()<CR>
 nnoremap <silent> <leader>pw :call WindowSwap#DoWindowSwap()<CR>
 nnoremap <silent> <leader>yw :call WindowSwap#EasyWindowSwap()<CR>
 
+" let g:ale_fixers = {}
+" let g:ale_fixers['javascript'] = ['prettier', 'eslint']
+" let g:ale_fix_on_save = 1
 
-let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier', 'eslint']
-let g:ale_fix_on_save = 1
-
-let g:ale_sign_error = '●'
-let g:ale_sign_warning = '.'
-let g:ale_lint_on_enter = 0
-let g:ale_javascript_prettier_use_local_config = 1
+" let g:ale_sign_error = '●'
+" let g:ale_sign_warning = '.'
+" let g:ale_lint_on_enter = 0
+" let g:ale_javascript_prettier_use_local_config = 1
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_ignore_case = 1
@@ -80,3 +76,19 @@ let g:deoplete#sources#tss#javascript_support = 1
 let g:tsuquyomi_javascript_support = 1
 let g:tsuquyomi_auto_open = 1
 let g:tsuquyomi_disable_quickfix = 1
+
+autocmd! BufWritePost * Neomake
+let g:neomake_warning_sign = {
+  \ 'text': '?',
+  \ 'texthl': 'WarningMsg',
+  \ }
+
+let g:neomake_error_sign = {
+  \ 'text': 'X',
+  \ 'texthl': 'ErrorMsg',
+  \ }
+
+let g:airline#extensions#tabline#enabled = 1
+set statusline+=%#warningmsg#
+set statusline+=%*
+

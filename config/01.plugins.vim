@@ -7,6 +7,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
   Plug 'carlitux/deoplete-ternjs'
 
+  Plug 'neomake/neomake'
+  Plug 'ludovicchabant/vim-gutentags'
+
+  Plug 'galooshi/vim-import-js', { 'do': 'npm install -g import-js' }
+
   " Add or remove your plugins here like this:
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
@@ -17,7 +22,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'mhartington/deoplete-typescript'
 
   " Linter
-  Plug 'w0rp/ale'
 
   " Theme
   Plug 'dracula/vim'
@@ -27,8 +31,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'bling/vim-airline'
   Plug 'bling/vim-bufferline'
   Plug 'Yggdroot/indentLine'
-
-  " typescript stuff
 
   " 'ide' stuff
   Plug 'kien/ctrlp.vim'
