@@ -2,50 +2,38 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
-" Required:
-set runtimepath+=/Users/ryan/.cache/dein/repos/github.com/Shougo/dein.vim
-
-" Required:
-if dein#load_state('~/.cache/dein')
-  call dein#begin('~/.cache/dein')
-
-  " Let dein manage dein
-  " Required:
-  " For async completion
-  call dein#add('~/.cache/dein/repos/github.com/shougo/dein.vim')
-  call dein#add('shougo/deoplete.nvim')
-
+call plug#begin('~/.vim/plugged')
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
+  Plug 'carlitux/deoplete-ternjs'
 
   " Add or remove your plugins here like this:
-  call dein#add('HerringtonDarkholme/yats.vim')
-  call dein#add('mhartington/nvim-typescript', {'build': './install.sh'})
+  Plug 'HerringtonDarkholme/yats.vim'
+  Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 
-  "Denite
-  call dein#add('Shougo/denite.nvim')
+  "Typescript Plugins
+  Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+  Plug 'Quramy/tsuquyomi', { 'do': 'npm install -g typescript' }
+  Plug 'mhartington/deoplete-typescript'
 
-  " Linter 
-  call dein#add('w0rp/ale')
+  " Linter
+  Plug 'w0rp/ale'
 
   " Theme
-  call dein#add('dracula/vim')
+  Plug 'dracula/vim'
 
   " Layout
-  call dein#add('airblade/vim-gitgutter')
-  call dein#add('bling/vim-airline')
-  call dein#add('bling/vim-bufferline')
-  call dein#add('Yggdroot/indentLine.git')
+  Plug 'airblade/vim-gitgutter'
+  Plug 'bling/vim-airline'
+  Plug 'bling/vim-bufferline'
+  Plug 'Yggdroot/indentLine'
 
   " typescript stuff
-  call dein#add('leafgarland/typescript-vim')
 
   " 'ide' stuff
-  call dein#add('kien/ctrlp.vim.git')
-  call dein#add('jeetsukumaran/vim-buffergator.git')
-  call dein#add('dyng/ctrlsf.vim')
-  call dein#add('vimwiki/vimwiki.git')
-  call dein#add('scrooloose/nerdtree.git')
-
-  " Required:
-  call dein#end()
-  call dein#save_state()
-endif
+  Plug 'kien/ctrlp.vim'
+  Plug 'jeetsukumaran/vim-buffergator'
+  Plug 'dyng/ctrlsf.vim'
+  Plug 'vimwiki/vimwiki'
+  Plug 'scrooloose/nerdtree'
+call plug#end()
