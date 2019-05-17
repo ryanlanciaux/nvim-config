@@ -3,8 +3,6 @@ if &compatible
 endif
 
 call plug#begin('~/.vim/plugged')
-  Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-
   " Lint
   Plug 'w0rp/ale'
 
@@ -16,7 +14,6 @@ call plug#begin('~/.vim/plugged')
 
   " Add or remove your plugins here like this:
   Plug 'HerringtonDarkholme/yats.vim'
-  Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 
   " Theme
   Plug 'dracula/vim'
@@ -29,8 +26,6 @@ call plug#begin('~/.vim/plugged')
 
   "Typescript Plugins
   Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-  Plug 'Quramy/tsuquyomi', { 'do': 'npm install -g typescript' }
-  Plug 'mhartington/deoplete-typescript'
 
   " 'ide' stuff
   Plug 'kien/ctrlp.vim'
@@ -38,4 +33,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'dyng/ctrlsf.vim'
   Plug 'vimwiki/vimwiki'
   Plug 'scrooloose/nerdtree'
+
+  Plug 'mbbill/undotree'
 call plug#end()

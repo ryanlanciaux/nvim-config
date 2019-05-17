@@ -6,7 +6,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <leader>fp :Prettier
 "ctrlp settings
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site|node_modules)$',
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site|node_modules|build|dist|public)$',
   \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
 \}
 
@@ -37,6 +37,7 @@ nmap <leader>T :enew<cr>
 nmap <leader>bq :bp <BAR> bd #<cr>
 
 nmap <leader>sf <Plug>CtrlSFPrompt
+let g:ctrlsf_ignore_dir = ['bower_components', 'node_modules', 'public', 'dist', 'build']
 
 let g:jsx_ext_required = 0 "Allow jsx
 
@@ -167,3 +168,6 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+" UndoTree
+nmap <leader>uu :UndotreeToggle<cr>
